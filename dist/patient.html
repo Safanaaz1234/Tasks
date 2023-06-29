@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="output.css" >
+   
+</head>
+<body class="bg-bgColor w-full">
+    <header class="bg-customColor p-5 h-14 flex items-center justify-between shadow-md shadow-slate-300 sticky z-50">
+        <div>
+            <span class="bg-white text-customColor  px-4 py-1 rounded-2xl mr-10">
+                Patient System
+            </span>
+            <i class="fa fa-bars text-white cursor-pointer" onclick="navbarSlide()"></i>
+        </div>
+        <div class="text-white">
+            <i class="fa fa-envelope ml-5"></i>
+            <i class="fa fa-bell ml-5"></i>
+            <i class="fa fa-user-circle ml-5"></i>
+        </div>
+        
+    </header>
+    <main class="flex">
+        <div class="bg-white  h-screen w-56  lg:w-52 pt-7 shadow-lg shadow-slate-500 border" id="slidebar">
+            <div class="mx-5 lg:mx-10">
+                    <center>
+                        <img src="user.png" class="w-14 rounded-full " />
+                        <span class="text-slate-500 font-semibold"> Lorem ipsum Admin</span>
+                    </center>
+            </div>
+            <div class="mt-6">
+                <ul class="mr-6">
+                    <li class="bg-gradient-to-r from-blue-600 to-customColor rounded-r-2xl  p-1 text-white shadow-md  shadow-slate-500">
+                        <i class="fa fa-user-md ml-4 lg:ml-8"></i> <span class="ml-2">Patient</span>
+                    </li>
+                    <li class="p-1 mt-1 text-slate-500">
+                        <i class="fa fa-user ml-4 lg:ml-8"></i><span class="ml-3">Logout</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full">
+           <div class="bg-white h-14 md:h-16 shadow-lg"> 
+                <h1 class="py-4 px-6 font-semibold text-slate-600 text-base lg:text-lg">Patient Dashboard</h1>
+           </div>
+           <div class="w-[95%] m-6 lg:flex lg:justify-between" >
+             <div class=" my-3  w-[93%] lg:w-[48.7%] bg-white rounded-md shadow-md shadow-slate-400 p-2">
+                    <h2 class="font-semibold text-slate-600 border-b-2 p-1 mx-2">Patient Details</h2>
+                    <form class="mx-2 mt-1 text-slate-500">
+                        
+                                <ul class="flex justify-between content-evenly flex-wrap">
+                                    <li>First Name
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Last Name
+                                            <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Phone
+                                            <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Email
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Address Line 1
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Address Line 2
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>City
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>State
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    <li>Zipcode
+                                        <br/>
+                                        <input type="text" class="border" />
+                                    </li>
+                                    
+                                </ul>
+                                <button class="bg-customColor rounded-2xl text-white px-5 py-1 text-sm font-semibold my-4">ADD</button>
+                    </form>
+             </div>
+             <div class="mr-3 my-3 w-[93%] lg:w-[48.7%] bg-white rounded-md shadow-md shadow-slate-400 p-2">
+                <div class="border-b-2  p-1 mx-2 flex justify-between">
+                    <h2 class="font-semibold text-slate-600 ">Patient List</h2>
+                    <input type="search" placeholder="Search by First Name" class="border text-sm p-1 w-52" />
+                </div>
+                <table class="mx-2 border mt-2  w-[97%] text-sm">
+                    <tr class="bg-slate-200">
+                        <td class="p-1 font-semibold">First Name</td>
+                        <td class="p-1 font-semibold">Last Name</td>
+                        <td class="p-1 font-semibold">Address</td>
+                        <td class="p-1 font-semibold">Action</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-1">Lorem</td>
+                        <td class="py-2 px-1">Ipsum</td>
+                        <td class="py-2 px-1">Lorem Ipsum  dummy text</td>
+                        <td class="py-2 px-1 text-white ">
+                            <i class="fa fa-eye bg-customColor p-1 rounded-full"></i>
+                            <i class="fa fa-pencil  bg-customColor p-1 rounded-full"></i>
+                            <i class="fa fa-times  bg-customColor p-1 rounded-full"></i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+           </div>
+        </div>
+    </main>
+</body>
+<script>
+    let clickCount = 1;
+    document.body.style.overflowY = "hidden";
+    function navbarSlide(){
+        clickCount++;
+      if (clickCount % 2 === 0) {
+        document.body.style.overflowY = "auto";
+        document.getElementById("slidebar").style.display = 'none';
+       
+      } else {
+        
+        document.body.style.overflowY = "hidden";
+        document.getElementById("slidebar").style.display = 'block';
+      }
+    }
+  
+</script>
+</html>
