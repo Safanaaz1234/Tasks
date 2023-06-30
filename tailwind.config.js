@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         customColor: "#663398",
         bgColor: "#F3F4F8",
+        navyBlue: "#09225A",
       },
       boxShadow: {
         custom: "2px 2px 4px rgba(0, 0, 0, 0.25)",
